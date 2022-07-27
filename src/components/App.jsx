@@ -1,16 +1,24 @@
+import  Statistic  from './Button/Button'
+
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
-        display: 'flex',
+        height: '500px',
+        width: '400px',
+        display: 'block',
         justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: 'orange',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
+        margin: '20px',
+        padding: '20px',
       }}
     >
-      React homework template
+
+      Please leave feedback
+       <Statistic/>
+       
     </div>
   );
 };
