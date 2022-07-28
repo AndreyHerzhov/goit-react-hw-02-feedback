@@ -91,19 +91,13 @@ class Card extends Component {
             
         )}
          
-        
-          
-        
         </Section>
-          
-          
+                
     </> 
       );
     }
   }
 
-
-  
 const Wrapper = styled.div`
    
     padding: 2px;
@@ -119,10 +113,7 @@ const Wrapper = styled.div`
 `;
 
 const Statistics  = styled.div`
-   
  
 `;
   
-  
-  
-  export default Card;
+export default Card;
