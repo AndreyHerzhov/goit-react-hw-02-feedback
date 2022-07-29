@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import FeedbackOptions from "./atoms/FeedbackOptions/FeedbackOptions";
-import { Section, StatisticTitle} from "../components/molecules/Section/Section.styled"
-import Statistica from "./molecules/Section/Section"
+import { StatisticTitle} from "./molecules/Statistics/Statistics.styled"
+import Statistics from "./molecules/Statistics/Statistics"
+// import Section from "./atoms/Section/Section"
 import styled from "styled-components";
 
  class App extends Component {
@@ -9,7 +10,6 @@ import styled from "styled-components";
     good: 0,
     neutral: 0,
     bad: 0,
-     
   }
  
   countTotalFeedback = () => {
@@ -30,7 +30,9 @@ import styled from "styled-components";
     
   }
 
-  handleClick = (key) => {
+  handleClick = (e) => {
+    console.log(e.target.name)
+    const key = e.target.name
     this.setState(prevState => {
       return {
         [key]: prevState[key] + 1
@@ -40,51 +42,64 @@ import styled from "styled-components";
 
  
   render() {
-    console.log(Object.keys(this.state))
-    console.log(Object.values(this.state))
-    console.log(Object.entries(this.state))
+    // console.log(Object.keys(this.state))
+    // console.log(Object.values(this.state))
+    // console.log(Object.entries(this.state))
     const { good, neutral, bad } = this.state;
+    const stateKeysArr = Object.keys(this.state)
     return (
      <>  
        
-      <Section>
+       <FeedbackCard>
         <StatisticTitle>Please leave feedback</StatisticTitle>
-        {Object.keys(this.state).map(key => {
-          return <FeedbackOptions options={key}  key={key} onLeaveFeedback={() => this.handleClick(key)}/>
-        })}
- 
-        {this.countTotalFeedback() > 0 && (
-         <Statistics>
-
-        {/* {Object.entries(this.state).map(el => {
-          return <Wrapper key={el[0]}>
-                      <ValueTitle title={el[0]}/>
-                      <Value  value={el[1]} />
-                  </Wrapper>
+        <FeedbackOptions 
+                   options={stateKeysArr} 
+                   onLeaveFeedback={this.handleClick}/>
+        {/* {Object.keys(this.state).map(key => {
+          return <FeedbackOptions 
+                  options={key} 
+                  key={key} onLeaveFeedback={() => this.handleClick(key)}/>
         })} */}
         
-        <Statistica good={good} 
+        {this.countTotalFeedback() > 0 && (
+         
+         
+        
+        <Statistics good={good} 
                     neutral={neutral} 
                     bad={bad} 
                     total={this.countTotalFeedback()} 
                     positivePercentage={this.countPositiveFeedbackPercentage()} 
                     />
  
-        </Statistics>
+        
           
       )}
        
-      </Section>
+       </FeedbackCard>
               
   </> 
     );
   }
 }
 
- 
-
-const Statistics  = styled.div`
- 
-`;
 
 export default App;
+ 
+const FeedbackCard = styled.div`
+margin: 50px;
+padding: 20px;
+text-align: center;
+width: 320px;
+height: 500px;
+background-color: lightcoral;
+border-radius: 20px;
+`
+
+
+         /* {Object.entries(this.state).map(el => {
+          return <Wrapper key={el[0]}>
+                      <ValueTitle title={el[0]}/>
+                      <Value  value={el[1]} />
+                  </Wrapper>
+        })} */ 

@@ -1,47 +1,48 @@
 import React, { Component } from "react";
-import Value from "../../atoms/Values/Statistics"
+import Value from "../../atoms/Values/Value"
 import ValueTitle from '../../atoms/ValueName/ValueName'
  
 import styled from "styled-components";
 
-class Statistica  extends Component {
+class Statistics extends Component {
     
     render() {
       const { good, neutral, bad, total, positivePercentage} = this.props;
-      console.log(good.name)
-       
+             
       return (
        <>  
-          <Wrapper>
+       <StatisticsWrapper>
+          <ValueWrapper>
              <ValueTitle title="Good:"/>
              <Value value={good} />
-          </Wrapper>
+          </ValueWrapper>
 
-          <Wrapper>
+          <ValueWrapper>
              <ValueTitle title="Neutral:"/>
              <Value value={neutral} />
-          </Wrapper>
+          </ValueWrapper>
 
-          <Wrapper>
+          <ValueWrapper>
              <ValueTitle title="Bad:"/>
              <Value value={bad} />
-          </Wrapper>  
+          </ValueWrapper>  
 
-          <Wrapper>
+          <ValueWrapper>
              <ValueTitle title="Total:"/>
              <Value value={total} />
-          </Wrapper>
-          <Wrapper>
+          </ValueWrapper>
+          <ValueWrapper>
              <ValueTitle title="Positive feedback:"/>
              <Value value={positivePercentage} />
              <ValueTitle title="%"/>
-          </Wrapper>
+          </ValueWrapper>
+          </StatisticsWrapper>
     </> 
       );
     }
   }
 
-const Wrapper = styled.div`
+const ValueWrapper = styled.div`
    
     padding: 2px;
     border-radius: 10px;
@@ -55,6 +56,10 @@ const Wrapper = styled.div`
     border: 1px solid black;
 `;
 
+const StatisticsWrapper  = styled.div`
+ 
+`;
+
  
   
-export default Statistica ;
+export default Statistics  ;

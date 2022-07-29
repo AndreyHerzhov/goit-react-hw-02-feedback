@@ -11,3 +11,8 @@ export const OptionButton = styled.button`
     color: white;
  }
 `
+export const OptionButtonWrapper = styled.div`
+      width: 200px;
+      height: 50px;
+      display: flex;
+`

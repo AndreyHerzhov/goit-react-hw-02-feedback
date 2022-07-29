@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StatisticValue } from "./Statistics.styled"
+import { StatisticValue } from "./Value.styled"
 
 
 class Value extends Component {
