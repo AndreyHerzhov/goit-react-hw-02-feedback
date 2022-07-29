@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import FeedbackOptions from "./atoms/FeedbackOptions/FeedbackOptions";
 import { Section, StatisticTitle} from "../components/molecules/Section/Section.styled"
-// import Value from "./atoms/Values/Statistics"; 
-// import ValueTitle from "./atoms/ValueName/ValueName";
 import Statistica from "./molecules/Section/Section"
 import styled from "styled-components";
 
@@ -46,7 +44,6 @@ import styled from "styled-components";
     console.log(Object.values(this.state))
     console.log(Object.entries(this.state))
     const { good, neutral, bad } = this.state;
-    console.log(good)
     return (
      <>  
        
@@ -72,33 +69,8 @@ import styled from "styled-components";
                     total={this.countTotalFeedback()} 
                     positivePercentage={this.countPositiveFeedbackPercentage()} 
                     />
-
-
-         {/* <Wrapper>
-             <ValueTitle title="Good:"/>
-             <Value value={good} />
-          </Wrapper>
-
-          <Wrapper>
-             <ValueTitle title="Neutral:"/>
-             <Value value={neutral} />
-          </Wrapper>
-
-          <Wrapper>
-             <ValueTitle title="Bad:"/>
-             <Value value={bad} />
-          </Wrapper> */}
-
-          {/* <Wrapper>
-             <ValueTitle title="Total:"/>
-             <Value value={this.countTotalFeedback()} />
-          </Wrapper>
-          <Wrapper>
-             <ValueTitle title="Positive feedback:"/>
-             <Value value={this.countPositiveFeedbackPercentage()} />
-             <ValueTitle title="%"/>
-          </Wrapper> */}
-         </Statistics>
+ 
+        </Statistics>
           
       )}
        
@@ -109,19 +81,7 @@ import styled from "styled-components";
   }
 }
 
-// const Wrapper = styled.div`
-   
-//     padding: 2px;
-//     border-radius: 10px;
-//     display: flex;
-//     justify-items: center;
-//     justify-content: center;
-//     align-items: center;
-//     margin-top: 50px;
-//     height: 30px;
-//     background-color: #e2efc0;
-//     border: 1px solid black;
-// `;
+ 
 
 const Statistics  = styled.div`
  
