@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FeedbackOptions from "./atoms/FeedbackOptions/FeedbackOptions";
 import { StatisticTitle} from "./molecules/Statistics/Statistics.styled"
 import Statistics from "./molecules/Statistics/Statistics"
+import Notification from "./atoms/Notification/Notification";
 // import Section from "./atoms/Section/Section"
 import styled from "styled-components";
 
@@ -55,23 +56,28 @@ import styled from "styled-components";
         <FeedbackOptions 
                    options={stateKeysArr} 
                    onLeaveFeedback={this.handleClick}/>
+
         {/* {Object.keys(this.state).map(key => {
           return <FeedbackOptions 
                   options={key} 
                   key={key} onLeaveFeedback={() => this.handleClick(key)}/>
         })} */}
+        {!this.countTotalFeedback() > 0 && (
+          <Notification message="There is no feedback"/>
+        )}
         
+
         {this.countTotalFeedback() > 0 && (
          
+        <StatisticWrapper>
          
-        
         <Statistics good={good} 
                     neutral={neutral} 
                     bad={bad} 
                     total={this.countTotalFeedback()} 
                     positivePercentage={this.countPositiveFeedbackPercentage()} 
                     />
- 
+        </StatisticWrapper>
         
           
       )}
@@ -92,9 +98,15 @@ padding: 20px;
 text-align: center;
 width: 320px;
 height: 500px;
-background-color: lightcoral;
+background-color: #85d093;
 border-radius: 20px;
 `
+
+const StatisticWrapper = styled.div`
+  width: 320px;
+  height: 300px;
+`
+
 
 
          /* {Object.entries(this.state).map(el => {
