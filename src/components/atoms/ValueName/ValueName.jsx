@@ -1,12 +1,12 @@
 import { ValueName }  from './ValueName.styled'
+ 
+export const ValueTitle = ({ title }) => {
+  return (
+    <ValueName>{title}</ValueName>
+  );
+};
 
-import React, { Component } from "react";
 
-class ValueTitle extends Component {
-  render() {
-    const { title } = this.props;
-    return <ValueName>{title}</ValueName>;
-  }
-}
 
+ 
 export default ValueTitle;

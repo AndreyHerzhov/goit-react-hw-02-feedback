@@ -1,21 +1,15 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+ 
+import { SectionWrapper, SectionTitle } from "./Section.styled";
+ 
 
-class Section extends Component {
-    render() {
-        const {title} = this.props
-        return (
-            <SectionWrapper>
-            <SectionTitle>{title}</SectionTitle>
+export const Section = ({ title, children }) => {
+    return (
+        <SectionWrapper>
+                <SectionTitle>{title}</SectionTitle>
+                {children}
             </SectionWrapper>
-        )
-    }
-}
+    );
+  };
 
-const SectionTitle = styled.p`
-`
-const SectionWrapper = styled.div`
-    width: 320px;
-`
-
+ 
  export default Section

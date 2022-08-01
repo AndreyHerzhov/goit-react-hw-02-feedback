@@ -12,6 +12,7 @@ export const OptionButton = styled.button`
  }
 `
 export const OptionButtonWrapper = styled.div`
+      margin-top: 15px;
       width: 200px;
       height: 50px;
       display: flex;
