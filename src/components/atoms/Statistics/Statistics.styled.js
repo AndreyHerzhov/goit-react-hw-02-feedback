@@ -24,3 +24,21 @@ export const StatisticTitle = styled.p`
 margin-bottom: 20px;
 font-size: 30px;
 `
+
+export const StatisticValue = styled.span`
+    margin-left: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const Wrapper = styled.div`
+    display: flex;
+    height: 60px;
+    width: 100px;
+`
+export const ValueName = styled.p`
+
+    font-size: 18px;
+    display: block;
+     
+`

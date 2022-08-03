@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FeedbackOptions from "./atoms/FeedbackOptions/FeedbackOptions";
-import Statistics from "./molecules/Statistics/Statistics"
+import Statistics from "./atoms/Statistics/Statistics"
 import Notification from "./atoms/Notification/Notification";
 import Section from "./atoms/Section/Section"
  
@@ -55,13 +55,9 @@ import Section from "./atoms/Section/Section"
         </Section>
           
       
-        {!this.countTotalFeedback() > 0 && (
-          <Notification message="There is no feedback"/>
-        )}
-        
-        {this.countTotalFeedback() > 0 && (
-         
-        <Section title="Statistics">
+        {!this.countTotalFeedback() > 0
+          ?  <Notification message="There is no feedback"/>
+          :  <Section title="Statistics">
          
             <Statistics good={good} 
                         neutral={neutral} 
@@ -69,11 +65,13 @@ import Section from "./atoms/Section/Section"
                         total={this.countTotalFeedback()} 
                         positivePercentage={this.countPositiveFeedbackPercentage()} 
                         />
-        </Section>
+            </Section>
+        }
+      
         
-          
-      )}
-       
+        
+        
+     
      
               
   </> 
