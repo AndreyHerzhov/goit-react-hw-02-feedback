@@ -24,14 +24,12 @@ import Section from "./atoms/Section/Section"
       return 0
     } else {
       const positiveFeedbackPercentage = positivePercentage.toFixed(0)
-      console.log(positiveFeedbackPercentage)
       return positiveFeedbackPercentage
     }
     
   }
 
   handleClick = (e) => {
-    console.log(e.target.name)
     const key = e.target.name
     this.setState(prevState => {
       return {
@@ -59,11 +57,11 @@ import Section from "./atoms/Section/Section"
           ?  <Notification message="There is no feedback"/>
           :  <Section title="Statistics">
          
-            <Statistics good={good} 
-                        neutral={neutral} 
-                        bad={bad} 
-                        total={this.countTotalFeedback()} 
-                        positivePercentage={this.countPositiveFeedbackPercentage()} 
+            <Statistics good={Number(good)} 
+                        neutral={Number(neutral)} 
+                        bad={Number(bad)} 
+                        total={Number(this.countTotalFeedback())} 
+                        positivePercentage={Number(this.countPositiveFeedbackPercentage())} 
                         />
             </Section>
         }
@@ -82,13 +80,3 @@ import Section from "./atoms/Section/Section"
 
 export default App;
  
- 
-
-
-//         Доброго дня!
-// Перечитайте, будь ласка, уважно завдання і проведіть рефакторинг: 
-// у вас має бути рівно така кількість компонентів і з такими назваи (якщо вони вказані), 
-// як передбачено в завданні).
-// Компонентами-класами зробіть лише компоненти зі стейтом.
-// Стилі завжди мають бути в окремому файлі.
-// Допрацюйте, після чого будуть надані більш точкові коментарі.
